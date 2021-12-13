@@ -15,7 +15,7 @@ import sys
 import json
 
 if len(sys.argv) < 4:
-	print("Usage: python el_merge_counters.py <in file 1> <in file 2> [<in file n>] <out file>");
+	print("Usage: python merge_counters.py <in file 1> <in file 2> [<in file n>] <out file>");
 	sys.exit(1)
 
 outFileName=sys.argv[len(sys.argv)-1]
