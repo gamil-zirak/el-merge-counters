@@ -47,7 +47,11 @@ for i in sys.argv[1:len(sys.argv)-1]:
 								entryFound = True
 								entryOutI['n_total'] = entryOutI['n_total'] + entryIn['n_total']
 						if not entryFound:
+							if 'extra' in entryIn.keys():
+								categoryOutI['entries'].append({'extra':entryIn['extra'], 'n_total':entryIn['n_total'], 'name':entryIn['name']})
+							else:
 								categoryOutI['entries'].append({'n_total':entryIn['n_total'], 'name':entryIn['name']})
+
 		f.close()
 	except FileNotFoundError:
 		print("File "+i+" not found.")

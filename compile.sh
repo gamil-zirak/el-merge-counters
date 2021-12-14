@@ -27,7 +27,7 @@ if ! command -v cython &>/dev/null ; then
 fi
 
 
-pyinclude=`python3-config --cflags`
+pyinclude=`python3-config --includes`
 if [ $? -ne 0 ] ; then
 	if ! command -v pkg-config &>/dev/null ; then
 		echo "pkg-config not found"
@@ -65,7 +65,6 @@ fi
 #echo "Python library: $pylibs"
 
 cython merge_counters.pyx --embed
-#gcc -I/usr/include/python3.9 -lpython3.9 -o merge_counters merge_counters.c
 gcc $pyinclude -o merge_counters merge_counters.c $pylibs
 rm merge_counters.pyx
 rm merge_counters.c
