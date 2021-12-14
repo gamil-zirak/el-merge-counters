@@ -1,25 +1,4 @@
-
-
-#if command -v pyenv &>/dev/null
-#then
-#	pyprefix=`pyenv prefix`
-#else
-#	echo "Not using pyenv for Python headers and libraries. Will try to find those matching system Python."
-#	usepyenv=false
-#	whichpython=`which python`
-#	pyprefix=`dirname $whichpython`
-#fi
-#echo pyprefix $pyprefix
-
-#if ! command -v python &>/dev/null
-#then
-#	echo "Python not found."
-#	exit 1
-#fi
-
-#pyversion=`echo -e "import sys\nprint(str(sys.version_info.major)+'.'+str(sys.version_info.minor))"|python`
-#echo pyversion $pyversion
-
+#!/usr/bin/env bash
 
 if ! command -v cython &>/dev/null ; then
 	echo "cython not found"
